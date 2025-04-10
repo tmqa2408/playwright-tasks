@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Базовые тесты для getByAltText()', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbyalttext');
+    await page.goto('https://osstep.github.io/locator_getbyalttext');
   });
 
   // Задание 1: Найди изображение с точным alt-текстом "Красивый пейзаж с горами и озером"
@@ -23,7 +23,7 @@ test.describe('Базовые тесты для getByAltText()', () => {
 
 test.describe('Тесты для динамических изображений', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbyalttext');
+    await page.goto('https://osstep.github.io/locator_getbyalttext');
   });
 
   // Задание 1: Дождись появления динамического изображения и найди его по alt-тексту

@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Базовые hover-эффекты', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_hover');
+    await page.goto('https://osstep.github.io/action_hover');
   });
 
   // Тест 1: Проверка логгирования hover событий
@@ -13,7 +13,7 @@ test.describe('Базовые hover-эффекты', () => {
   test('Hover события логируются', async ({ page }) => {
     const hoverBox = page.getByText('Наведи на меня');
 
-    await hoverBox.hover();
+    // твой код
     await expect(page.locator('#hover-log')).toContainText('Наведение на простой блок');
 
     await page.mouse.move(0, 0);
@@ -23,7 +23,7 @@ test.describe('Базовые hover-эффекты', () => {
 
 test.describe('Всплывающие подсказки', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_hover');
+    await page.goto('https://osstep.github.io/action_hover');
   });
 
   // Тест 1: Проверка появления подсказки
@@ -40,7 +40,7 @@ test.describe('Всплывающие подсказки', () => {
     await expect(tooltip).toBeHidden();
 
     // Наводим курсор
-    await tooltipTrigger.hover();
+    // твой код
 
     // Проверяем появление подсказки
     await expect(tooltip).toBeVisible();
@@ -57,7 +57,7 @@ test.describe('Всплывающие подсказки', () => {
     const tooltip = page.getByText('Это текст подсказки');
 
     const box = await tooltipTrigger.boundingBox();
-    await tooltipTrigger.hover();
+    // твой код
 
     const tooltipBox = await tooltip.boundingBox();
     if (tooltipBox && box) {
@@ -74,7 +74,7 @@ test.describe('Всплывающие подсказки', () => {
 
 test.describe('Выпадающие меню', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_hover');
+    await page.goto('https://osstep.github.io/action_hover');
   });
 
   // Тест 1: Проверка открытия подменю
@@ -91,7 +91,7 @@ test.describe('Выпадающие меню', () => {
     await expect(submenu).toBeHidden();
 
     // Наводим курсор
-    await menuItem.hover();
+    // твой код
 
     // Проверяем что подменю появилось
     await expect(submenu).toBeVisible();
@@ -110,11 +110,11 @@ test.describe('Выпадающие меню', () => {
     const submenu2 = page.getByText('Подменю 2.1');
 
     // Наводим на первое меню
-    await menuItem1.hover();
+    // твой код
     await expect(submenu1).toBeVisible();
 
     // Переходим на второе меню
-    await menuItem2.hover();
+    // твой код
     await expect(submenu1).toBeHidden();
     await expect(submenu2).toBeVisible();
   });

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/assertion_tocontaintext');
+  await page.goto('https://osstep.github.io/assertion_tocontaintext');
 });
 
 test('1. Проверка статического текста', async ({ page }) => {

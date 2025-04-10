@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Базовые hover-эффекты', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_hover');
+    await page.goto('https://osstep.github.io/action_hover');
   });
 
   // Тест 1: Проверка логгирования hover событий
@@ -23,7 +23,7 @@ test.describe('Базовые hover-эффекты', () => {
 
 test.describe('Всплывающие подсказки', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_hover');
+    await page.goto('https://osstep.github.io/action_hover');
   });
 
   // Тест 1: Проверка появления подсказки
@@ -74,7 +74,7 @@ test.describe('Всплывающие подсказки', () => {
 
 test.describe('Выпадающие меню', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_hover');
+    await page.goto('https://osstep.github.io/action_hover');
   });
 
   // Тест 1: Проверка открытия подменю

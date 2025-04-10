@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Поиск элементов по роли "button"', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbyrole');
+    await page.goto('https://osstep.github.io/locator_getbyrole');
   });
 
   // Задание 1: Найди кнопку "Основное действие" используя getByRole с указанием роли и текста
@@ -35,7 +35,7 @@ test.describe('Поиск элементов по роли "button"', () => {
 
 test.describe('Поиск элементов форм по ролям', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbyrole');
+    await page.goto('https://osstep.github.io/locator_getbyrole');
   });
 
   // Задание 1: Найди поле "Имя пользователя" по роли textbox и связанному label
@@ -74,7 +74,7 @@ test.describe('Поиск элементов форм по ролям', () => {
 
 test.describe('Поиск вкладок и уведомлений по ролям', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbyrole');
+    await page.goto('https://osstep.github.io/locator_getbyrole');
   });
 
   // Задание 1: Работа с вкладками

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/assertion_tohaveurl');
+  await page.goto('https://osstep.github.io/assertion_tohaveurl');
 });
 
 test('1. Проверка изменения URL при навигации', async ({ page }) => {

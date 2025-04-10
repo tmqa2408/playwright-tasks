@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Базовые действия с кликами', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_click');
+    await page.goto('https://osstep.github.io/action_click');
   });
 
   // Тест 1: Проверка обычного клика по кнопке
@@ -34,7 +34,7 @@ test.describe('Базовые действия с кликами', () => {
 
 test.describe('Действия с правой кнопкой мыши', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_click');
+    await page.goto('https://osstep.github.io/action_click');
   });
 
   // Тест 1: Проверка контекстного меню
@@ -77,7 +77,7 @@ test.describe('Действия с правой кнопкой мыши', () => 
 
 test.describe('Продвинутые техники кликов', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_click');
+    await page.goto('https://osstep.github.io/action_click');
   });
 
   // Тест 1: Клик по координатам с проверкой позиции

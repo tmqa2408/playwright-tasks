@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Базовые тесты для getByText()', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbytext');
+    await page.goto('https://osstep.github.io/locator_getbytext');
   });
 
   // Задание 1: Найди параграф с точным текстом "Это обычный параграф текста для поиска"
@@ -22,7 +22,7 @@ test.describe('Базовые тесты для getByText()', () => {
 
 test.describe('Поиск по частичному совпадению', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbytext');
+    await page.goto('https://osstep.github.io/locator_getbytext');
   });
 
   // Задание 1: Найди элемент содержащий подстроку "важную информацию"
@@ -43,7 +43,7 @@ test.describe('Поиск по частичному совпадению', () =>
 
 test.describe('Сложные случаи поиска по тексту', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbytext');
+    await page.goto('https://osstep.github.io/locator_getbytext');
   });
 
   // Задание 1: Найди вложенный текст внутри span

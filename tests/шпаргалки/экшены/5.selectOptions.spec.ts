@@ -2,7 +2,7 @@ import { test, expect, Locator } from '@playwright/test';
 
 test.describe('Работа с базовыми select элементами', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_selectOptions');
+    await page.goto('https://osstep.github.io/action_selectOptions');
   });
 
   // Тест 1: Выбор одиночной опции по значению
@@ -35,7 +35,7 @@ test.describe('Работа с базовыми select элементами', ()
 
 test.describe('Работа с select multiple', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_selectOptions');
+    await page.goto('https://osstep.github.io/action_selectOptions');
   });
   // Хелпер для получения всех выбранных значений без evaluate
   const getSelectedValues = async (locator: Locator) => {
@@ -60,7 +60,7 @@ test.describe('Работа с select multiple', () => {
 
 test.describe('Продвинутые сценарии работы с select', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_selectOptions');
+    await page.goto('https://osstep.github.io/action_selectOptions');
   });
 
   // Тест 1: Выбор из группированных опций

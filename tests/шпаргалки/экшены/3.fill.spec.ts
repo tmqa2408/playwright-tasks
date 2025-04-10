@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Заполнение базовых полей формы', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_fill');
+    await page.goto('https://osstep.github.io/action_fill');
   });
 
   // Тест 1: Заполнение текстового поля
@@ -37,7 +37,7 @@ test.describe('Заполнение базовых полей формы', () =>
 
 test.describe('Заполнение специальных типов полей', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_fill');
+    await page.goto('https://osstep.github.io/action_fill');
   });
 
   // Тест 1: Заполнение textarea
@@ -67,7 +67,7 @@ test.describe('Заполнение специальных типов полей
 
 test.describe('Валидация и сложные сценарии заполнения', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_fill');
+    await page.goto('https://osstep.github.io/action_fill');
   });
 
   // Тест 1: Заполнение с проверкой паттерна

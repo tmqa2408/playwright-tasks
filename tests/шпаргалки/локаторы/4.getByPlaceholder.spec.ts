@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Базовые тесты для getByPlaceholder()', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getplaceholder');
+    await page.goto('https://osstep.github.io/locator_getplaceholder');
   });
 
   // Задание 1: Найди поле с placeholder "Введите ваше имя"
@@ -23,7 +23,7 @@ test.describe('Базовые тесты для getByPlaceholder()', () => {
 
 test.describe('Сложные случаи для getByPlaceholder()', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getplaceholder');
+    await page.goto('https://osstep.github.io/locator_getplaceholder');
   });
 
   // Задание 1: Найди textarea с многострочным placeholder

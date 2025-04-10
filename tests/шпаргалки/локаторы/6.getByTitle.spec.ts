@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Базовые тесты для getByTitle()', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbytitle');
+    await page.goto('https://osstep.github.io/locator_getbytitle');
   });
 
   // Задание 1: Найди элемент с точным title "Это простая подсказка"
@@ -24,7 +24,7 @@ test.describe('Базовые тесты для getByTitle()', () => {
 
 test.describe('Тесты для ссылок и специальных случаев', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbytitle');
+    await page.goto('https://osstep.github.io/locator_getbytitle');
   });
 
   // Задание 1: Найди ссылку "Главная" по title и проверь её атрибуты
@@ -45,7 +45,7 @@ test.describe('Тесты для ссылок и специальных случ
 
 test.describe('Сложные случаи и динамический контент', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbytitle');
+    await page.goto('https://osstep.github.io/locator_getbytitle');
   });
 
   // Задание 1: Найди элемент с title содержащим пробелы в начале и конце

@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Базовые тесты для getByTestId()', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbytestid');
+    await page.goto('https://osstep.github.io/locator_getbytestid');
   });
 
   // Задание 1: Найди заголовок страницы по test-id "page-header"
@@ -24,7 +24,7 @@ test.describe('Базовые тесты для getByTestId()', () => {
 
 test.describe('Тесты для формы и продуктов', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbytestid');
+    await page.goto('https://osstep.github.io/locator_getbytestid');
   });
 
   // Задание 1: Найди карточку продукта по test-id и проверь её содержимое
@@ -54,7 +54,7 @@ test.describe('Тесты для формы и продуктов', () => {
 
 test.describe('Специальные случаи для getByTestId()', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbytestid');
+    await page.goto('https://osstep.github.io/locator_getbytestid');
   });
 
   // Задание 1: Найди скрытый элемент по test-id и проверь что он не видим

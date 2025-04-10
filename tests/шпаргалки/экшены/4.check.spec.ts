@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Работа с базовыми чекбоксами', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_check');
+    await page.goto('https://osstep.github.io/action_check');
   });
 
   // Тест 1: Проверка и снятие отметки с чекбокса
@@ -43,7 +43,7 @@ test.describe('Работа с базовыми чекбоксами', () => {
 
 test.describe('Сложные сценарии работы с check()', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_check');
+    await page.goto('https://osstep.github.io/action_check');
   });
 
   // Тест 1: Работа с кастомными элементами
@@ -81,7 +81,7 @@ test.describe('Сложные сценарии работы с check()', () => {
 
 test.describe('Комплексное тестирование формы с чекбоксами', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_check');
+    await page.goto('https://osstep.github.io/action_check');
   });
 
   // Тест: Полное заполнение формы

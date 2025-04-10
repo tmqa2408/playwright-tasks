@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Работа с базовыми чекбоксами', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_check');
+    await page.goto('https://osstep.github.io/action_check');
   });
 
   // Тест 1: Проверка и снятие отметки с чекбокса
@@ -17,12 +17,12 @@ test.describe('Работа с базовыми чекбоксами', () => {
     const status = page.locator('#newsletter-status');
 
     await expect(newsletterCheckbox).not.toBeChecked();
-    await newsletterCheckbox.check();
+    // твой код
     await expect(newsletterCheckbox).toBeChecked();
     await expect(status).toHaveText('Подписаны');
     await expect(status).toHaveClass(/checked/);
 
-    await newsletterCheckbox.uncheck();
+    // твой код
     await expect(newsletterCheckbox).not.toBeChecked();
     await expect(status).toHaveText('Не подписаны');
   });
@@ -36,14 +36,14 @@ test.describe('Работа с базовыми чекбоксами', () => {
     const termsCheckbox = page.getByLabel('Я принимаю условия соглашения');
 
     await expect(termsCheckbox).toHaveAttribute('required', '');
-    await termsCheckbox.check();
+    // твой код
     await expect(termsCheckbox).toBeChecked();
   });
 });
 
 test.describe('Сложные сценарии работы с check()', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_check');
+    await page.goto('https://osstep.github.io/action_check');
   });
 
   // Тест 1: Работа с кастомными элементами
@@ -56,7 +56,7 @@ test.describe('Сложные сценарии работы с check()', () => {
     const tosContainer = page.locator('.tos-container');
 
     await tosContainer.scrollIntoViewIfNeeded();
-    await agreeCheckbox.check();
+    // твой код
     await expect(agreeCheckbox).toBeChecked();
   });
 
@@ -73,7 +73,7 @@ test.describe('Сложные сценарии работы с check()', () => {
     await expect(dynamicCheckbox1).toBeVisible({ timeout: 2000 });
     await expect(dynamicCheckbox2).toBeChecked();
 
-    await dynamicCheckbox1.check();
+    // твой код
     await expect(dynamicCheckbox1).toBeChecked();
     await expect(dynamicCheckbox2).toBeChecked();
   });
@@ -81,7 +81,7 @@ test.describe('Сложные сценарии работы с check()', () => {
 
 test.describe('Комплексное тестирование формы с чекбоксами', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_check');
+    await page.goto('https://osstep.github.io/action_check');
   });
 
   // Тест: Полное заполнение формы
@@ -93,20 +93,21 @@ test.describe('Комплексное тестирование формы с ч�
   // 6. Проверить все состояния
   test('Полное заполнение формы с проверкой состояний', async ({ page }) => {
     // Чекбоксы
-    await page.getByLabel('Подписаться на рассылку').check();
-    await page.getByLabel('Я принимаю условия соглашения').check();
+    // твой код
+    // твой код
 
     // Группа интересов
-    await page.getByLabel('Спорт').check();
-    await page.getByLabel('Кино').check();
-    await page.getByLabel('Музыка').uncheck();
+
+    // твой код
+    // твой код
+    // твой код
 
     // Радио-кнопки
-    await page.getByLabel('Почта России').check();
+    // твой код
 
     // Кастомный элемент
     await page.locator('.tos-container').scrollIntoViewIfNeeded();
-    await page.getByLabel('Я прочитал и согласен с условиями').check();
+    // твой код
 
     // Проверки
     await expect(page.getByLabel('Подписаться на рассылку')).toBeChecked();

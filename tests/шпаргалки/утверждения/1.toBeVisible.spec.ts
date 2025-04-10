@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 test.describe('Тестирование видимости элементов с toBeVisible()', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/assertion_tobevisible');
+    await page.goto('https://osstep.github.io/assertion_tobevisible');
   });
 
   test('Базовый тест видимости элемента', async ({ page }) => {

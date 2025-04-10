@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/assertion_tohaveclass');
+  await page.goto('https://osstep.github.io/assertion_tohaveclass');
 });
 
 test('1. Проверка начальных классов элементов', async ({ page }) => {

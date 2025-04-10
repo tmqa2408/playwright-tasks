@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Заполнение базовых полей формы', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_fill');
+    await page.goto('https://osstep.github.io/action_fill');
   });
 
   // Тест 1: Заполнение текстового поля
@@ -11,7 +11,7 @@ test.describe('Заполнение базовых полей формы', () =>
   // 3. Проверить что значение установлено правильно
   test('Заполнение текстового поля', async ({ page }) => {
     const usernameField = page.getByLabel('Имя пользователя');
-    await usernameField.fill('Иван Иванов');
+    // твой код
     await expect(usernameField).toHaveValue('Иван Иванов');
   });
 
@@ -25,11 +25,11 @@ test.describe('Заполнение базовых полей формы', () =>
     const emailField = page.getByPlaceholder('example@mail.com');
     const errorFeedback = page.getByText('Введите корректный email');
 
-    await emailField.fill('invalid-email');
+    // твой код
     await emailField.blur(); // Триггерим валидацию
     await expect(errorFeedback).toBeVisible();
 
-    await emailField.fill('valid@example.com');
+    // твой код
     await emailField.blur(); // Триггерим валидацию
     await expect(errorFeedback).toBeHidden();
   });
@@ -37,7 +37,7 @@ test.describe('Заполнение базовых полей формы', () =>
 
 test.describe('Заполнение специальных типов полей', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_fill');
+    await page.goto('https://osstep.github.io/action_fill');
   });
 
   // Тест 1: Заполнение textarea
@@ -48,7 +48,7 @@ test.describe('Заполнение специальных типов полей
     const bioField = page.getByLabel('Краткая биография');
     const longText = 'Меня зовут Иван.\nЯ работаю тестировщиком.\nЛюблю автоматизацию.';
 
-    await bioField.fill(longText);
+    // твой код
     await expect(bioField).toHaveValue(longText);
   });
 
@@ -60,14 +60,14 @@ test.describe('Заполнение специальных типов полей
   test('Заполнение числового поля', async ({ page }) => {
     const ageField = page.getByLabel('Возраст');
 
-    await ageField.fill('30');
+    // твой код
     await expect(ageField).toHaveValue('30');
   });
 });
 
 test.describe('Валидация и сложные сценарии заполнения', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/action_fill');
+    await page.goto('https://osstep.github.io/action_fill');
   });
 
   // Тест 1: Заполнение с проверкой паттерна
@@ -80,10 +80,10 @@ test.describe('Валидация и сложные сценарии запол�
     const phoneField = page.getByLabel('Телефон');
     const errorFeedback = page.getByText('Требуется 10 цифр');
 
-    await phoneField.fill('123');
+    // твой код
     await expect(errorFeedback).toBeVisible();
 
-    await phoneField.fill('1234567890');
+    // твой код
     await expect(errorFeedback).toBeHidden();
   });
 
@@ -95,13 +95,13 @@ test.describe('Валидация и сложные сценарии запол�
   test('Постепенное заполнение с очисткой', async ({ page }) => {
     const cardField = page.getByLabel('Кредитная карта');
 
-    await cardField.fill('1234');
+    // твой код
     await expect(cardField).toHaveValue('1234');
 
     await cardField.clear();
     await expect(cardField).toHaveValue('');
 
-    await cardField.fill('1234 5678 9012 3456');
+    // твой код
     await expect(cardField).toHaveValue('1234 5678 9012 3456');
   });
 });

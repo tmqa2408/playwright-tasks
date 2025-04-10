@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Базовые тесты для getByLabel()', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbylabel');
+    await page.goto('https://osstep.github.io/locator_getbylabel');
   });
 
   // Задание 1: Найди поле "Имя пользователя" по связанной метке
@@ -23,7 +23,7 @@ test.describe('Базовые тесты для getByLabel()', () => {
 
 test.describe('Тесты для чекбоксов и радиокнопок', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbylabel');
+    await page.goto('https://osstep.github.io/locator_getbylabel');
   });
 
   // Задание 1: Найди чекбокс "Музыка" по метке и проверь что он выбран
@@ -48,7 +48,7 @@ test.describe('Тесты для чекбоксов и радиокнопок', 
 
 test.describe('Сложные случаи для getByLabel()', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/locator_getbylabel');
+    await page.goto('https://osstep.github.io/locator_getbylabel');
   });
 
   // Задание 1: Найди поле телефона по тексту внутри label

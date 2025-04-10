@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/assertion_tohavevalue');
+  await page.goto('https://osstep.github.io/assertion_tohavevalue');
 });
 
 test('1. Проверка начальных значений полей', async ({ page }) => {

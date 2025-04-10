@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/assertion_tohaveurl');
+  await page.goto('https://osstep.github.io/assertion_tohaveurl');
 });
 
 test('1. Проверка изменения URL при навигации', async ({ page }) => {
@@ -12,15 +12,6 @@ test('1. Проверка изменения URL при навигации', asy
   // 4. Проверить что URL изменился и содержит "#contacts"
   // 5. Нажать на ссылку "Главная"
   // 6. Проверить что URL снова содержит "#home"
-
-  await page.getByRole('link', { name: 'О нас' }).click();
-  await expect(page).toHaveURL(/.*#about$/);
-
-  await page.getByRole('link', { name: 'Контакты' }).click();
-  await expect(page).toHaveURL(/.*#contacts$/);
-
-  await page.getByRole('link', { name: 'Главная' }).click();
-  await expect(page).toHaveURL(/.*#home$/);
 });
 
 test('2. Проверка URL при программной навигации', async ({ page }) => {
@@ -29,12 +20,6 @@ test('2. Проверка URL при программной навигации',
   // 2. Проверить что URL изменился на "#contacts"
   // 3. Нажать кнопку "Вернуться назад" (back() в истории)
   // 4. Проверить что URL вернулся к "#home"
-
-  await page.getByRole('button', { name: 'Перейти в раздел' }).click();
-  await expect(page).toHaveURL(/.*#contacts$/);
-
-  await page.getByRole('button', { name: 'Вернуться назад' }).click();
-  await expect(page).toHaveURL(/.*#home$/);
 });
 
 test('3. Проверка URL после ручного ввода', async ({ page }) => {
@@ -44,11 +29,4 @@ test('3. Проверка URL после ручного ввода', async ({ pa
   // 3. Проверить что URL содержит "#about"
   // 4. Обновить страницу
   // 5. Проверить что URL сохранился с "#about"
-
-  await page.goto('https://osstep.github.io/assertion_tohaveurl#about');
-  await expect(page.getByRole('heading', { name: 'О нас' })).toBeVisible();
-  await expect(page).toHaveURL(/.*#about$/);
-
-  await page.reload();
-  await expect(page).toHaveURL(/.*#about$/);
 });

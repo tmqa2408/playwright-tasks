@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/assertion_tohaveattribute');
+  await page.goto('https://osstep.github.io/assertion_tohaveattribute');
 });
 
 test('1. Проверка атрибутов основной кнопки', async ({ page }) => {

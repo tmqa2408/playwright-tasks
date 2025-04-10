@@ -9,9 +9,8 @@ test.describe('Практика работы с page.evaluate()', () => {
     // Базовое использование evaluate для получения данных
 
     // ШАГ 1: Получить текущее значение счетчика counter через evaluate
-    const counterValue = await page.evaluate(() => {
-      return document.getElementById('counter')?.textContent;
-    });
+    // Для это используй document.getElementById('counter')?.textContent
+    const counterValue = 'ТВОЙ КОД';
 
     // ПРОВЕРКА: Значение счетчика равно "0" при загрузке
     expect(counterValue).toBe('0');
@@ -20,9 +19,7 @@ test.describe('Практика работы с page.evaluate()', () => {
     await page.click('#increment');
 
     // ШАГ 3: Получаем обновленное значение через evaluate с параметром
-    const updatedValue = await page.evaluate((selector) => {
-      return document.querySelector(selector)?.textContent;
-    }, '#counter');
+    const updatedValue = 'ТВОЙ КОД';
 
     // ПРОВЕРКА: Значение увеличилось на 1
     expect(updatedValue).toBe('1');
@@ -37,12 +34,7 @@ test.describe('Практика работы с page.evaluate()', () => {
 
     // ШАГ 2: Модифицируем содержимое через evaluate - нужно с помощью evaluate добавить новой содержимое для элемента
     // <h3>Новое содержимое</h3><p>Сгенерировано в evaluate()</p>
-    await page.evaluate(() => {
-      const div = document.getElementById('dynamic-content');
-      if (div) {
-        div.innerHTML = '<h3>Новое содержимое</h3><p>Сгенерировано в evaluate()</p>';
-      }
-    });
+    // Используй innerHTML
 
     // ПРОВЕРКА: Содержимое изменилось
     await expect(page.locator('#dynamic-content h3')).toHaveText('Новое содержимое');

@@ -13,101 +13,70 @@ test.describe('Тестирование формы регистрации', () =
     // 4. Проверку профиля
     // 5. Выход из системы
 
-    await test.step('ПРЕДУСЛОВИЯ: Проверить начальное состояние формы', async () => {
-      // Что проверяем:
-      // - Все поля формы пустые
-      // - Сообщения об ошибке и успехе скрыты
-      // - Секция профиля не отображается
-      await expect(page.locator('#username')).toBeEmpty();
-      await expect(page.locator('#email')).toBeEmpty();
-      await expect(page.locator('#password')).toBeEmpty();
-      await expect(page.locator('#error-message')).toBeHidden();
-      await expect(page.locator('#success-message')).toBeHidden();
-      await expect(page.locator('.profile-section')).toBeHidden();
-    });
+    // Создай test.step ПРЕДУСЛОВИЯ: Проверить начальное состояние формы
+    // В рамках шага выполни проверки
+    // Что проверяем:
+    // - Все поля формы пустые
+    // - Сообщения об ошибке и успехе скрыты
+    // - Секция профиля не отображается
 
-    await test.step('ШАГ 1: Попытка регистрации с пустыми полями', async () => {
-      // Что выполняем:
-      // - Нажимаем кнопку без заполнения полей
-      // Что проверяем:
-      // - Появилось сообщение о необходимости заполнить все поля
-      // - Сообщение об успехе осталось скрытым
-      await page.getByRole('button', { name: 'Зарегистрироваться' }).click();
+    test.step();
 
-      await expect(page.locator('#error-message')).toBeVisible();
-      await expect(page.locator('#error-message')).toHaveText(
-        'Все поля обязательны для заполнения',
-      );
-      await expect(page.locator('#success-message')).toBeHidden();
-    });
+    // Создай test.step ШАГ 1: Попытка регистрации с пустыми полями
+    // В рамках шага выполни проверки
+    // Что выполняем:
+    // - Нажимаем кнопку без заполнения полей
+    // Что проверяем:
+    // - Появилось сообщение о необходимости заполнить все поля
+    // - Сообщение об успехе осталось скрытым
 
-    await test.step('ШАГ 2: Попытка регистрации с некорректными данными', async () => {
-      // Что выполняем:
-      // - Заполняем имя пользователя
-      // - Вводим email без @
-      // - Вводим слишком короткий пароль
-      // Что проверяем:
-      // - Соответствующие сообщения об ошибках
-      await page.locator('#username').fill('testuser');
-      await page.locator('#email').fill('invalid-email');
-      await page.locator('#password').fill('123');
-      await page.getByRole('button', { name: 'Зарегистрироваться' }).click();
+    test.step();
 
-      await expect(page.locator('#error-message')).toBeVisible();
-      await expect(page.locator('#error-message')).toContainText(
-        'Пароль должен быть не менее 6 символов',
-      );
-    });
+    // Создай test.step ШАГ 2: Попытка регистрации с некорректными данными
+    // В рамках шага выполни проверки
+    // Что выполняем:
+    // - Заполняем имя пользователя
+    // - Вводим email без @
+    // - Вводим слишком короткий пароль
+    // Что проверяем:
+    // - Соответствующие сообщения об ошибках
 
-    await test.step('ШАГ 3: Успешная регистрация', async () => {
-      // Что выполняем:
-      // - Заполняем все поля корректными данными
-      // Что проверяем:
-      // - Исчезло сообщение об ошибке
-      // - Появилось сообщение об успехе
-      // - Отобразилась секция профиля
-      await page.locator('#email').fill('test@example.com');
-      await page.locator('#password').fill('securepassword123');
-      await page.getByRole('button', { name: 'Зарегистрироваться' }).click();
+    test.step();
 
-      await expect(page.locator('#error-message')).toBeHidden();
-      await expect(page.locator('#success-message')).toBeVisible();
-      await expect(page.locator('#welcome-user')).toHaveText('testuser');
-      await expect(page.locator('.profile-section')).toBeVisible();
-    });
+    // Создай test.step ШАГ 3: Успешная регистрация
+    // В рамках шага выполни проверки
+    // Что выполняем:
+    // - Заполняем все поля корректными данными
+    // Что проверяем:
+    // - Исчезло сообщение об ошибке
+    // - Появилось сообщение об успехе
+    // - Отобразилась секция профиля
 
-    await test.step('ШАГ 4: Проверка данных профиля', async () => {
-      // Что проверяем:
-      // - Данные в профиле соответствуют введенным при регистрации
-      await expect(page.locator('#profile-username')).toHaveText('testuser');
-      await expect(page.locator('#profile-email')).toHaveText('test@example.com');
-    });
+    test.step();
 
-    await test.step('ШАГ 5: Выход из системы', async () => {
-      // Что выполняем:
-      // - Нажимаем кнопку выхода
-      // Что проверяем:
-      // - Форма регистрации сброшена
-      // - Секция профиля скрыта
-      await page.getByRole('button', { name: 'Выйти' }).click();
+    // Создай test.step ШАГ 4: Проверка данных профиля
+    // В рамках шага выполни проверки
+    // Что проверяем:
+    // - Данные в профиле соответствуют введенным при регистрации
 
-      await expect(page.locator('.profile-section')).toBeHidden();
-      await expect(page.locator('#username')).toBeEmpty();
-      await expect(page.locator('#auth-form')).toBeVisible();
-    });
+    test.step();
+
+    // Создай test.step ШАГ 5: Выход из системы
+    // В рамках шага выполни проверки
+    // Что выполняем:
+    // - Нажимаем кнопку выхода
+    // Что проверяем:
+    // - Форма регистрации сброшена
+    // - Секция профиля скрыта
   });
 
+  // Демонстрационный тест
   test.describe('Параметризованные тесты регистрации', () => {
     const testCases = [
       {
         title: 'Короткий пароль (5 символов)',
         data: { username: 'user1', email: 'user1@test.com', password: '12345' },
         expectedError: 'Пароль должен быть не менее 6 символов',
-      },
-      {
-        title: 'Email без домена',
-        data: { username: 'user2', email: 'user2', password: 'validpass' },
-        expectedError: 'Email должен быть действительным',
       },
     ];
 
@@ -131,6 +100,7 @@ test.describe('Тестирование формы регистрации', () =
     }
   });
 
+  // Демонстрационный тест
   test('Вложенные шаги с группами проверок', async ({ page }) => {
     await test.step('ГРУППА: Проверки валидации формы', async () => {
       await test.step('ПУСТЫЕ ПОЛЯ: Отправка пустой формы', async () => {

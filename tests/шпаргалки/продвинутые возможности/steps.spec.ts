@@ -104,11 +104,6 @@ test.describe('Тестирование формы регистрации', () =
         data: { username: 'user1', email: 'user1@test.com', password: '12345' },
         expectedError: 'Пароль должен быть не менее 6 символов',
       },
-      {
-        title: 'Email без домена',
-        data: { username: 'user2', email: 'user2', password: 'validpass' },
-        expectedError: 'Email должен быть действительным',
-      },
     ];
 
     for (const testCase of testCases) {
